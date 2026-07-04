@@ -1,0 +1,23 @@
+PC to Mobile - Third-party notices
+
+scrcpy 4.0
+Copyright (C) 2018-2026 Romain Vimont
+Copyright (C) 2018 Genymobile
+Licensed under the Apache License, Version 2.0.
+Source: https://github.com/Genymobile/scrcpy
+
+Android Debug Bridge
+Copyright The Android Open Source Project
+Source: https://developer.android.com/tools/adb
+
+The complete scrcpy Apache License 2.0 text is included as
+LICENSE-scrcpy.txt in the installer and portable distribution.
+
+QRCoder 1.8.0
+Copyright (c) 2013-2018 Raffael Herrmann
+Copyright (c) 2018-2025 QRCoder contributors
+Licensed under the MIT License.
+Source: https://github.com/Shane32/QRCoder
+
+The complete QRCoder MIT License text is included as
+LICENSE-QRCoder.txt in the installer and portable distribution.

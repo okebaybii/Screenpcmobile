@@ -1,0 +1,49 @@
+name: Windows release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Build installer
+        shell: powershell
+        run: powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./build.ps1
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: PCToMobile-Windows
+          path: |
+            publish/PCToMobile-Setup-v*.exe
+            publish/PCToMobile-v*-win-x64.zip
+          if-no-files-found: error
+
+      - name: Publish tagged release
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: powershell
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >
+          gh release create "${{ github.ref_name }}"
+          publish/PCToMobile-Setup-v*.exe
+          publish/PCToMobile-v*-win-x64.zip
+          --generate-notes
