@@ -30,7 +30,7 @@
 ## Tải và cài đặt
 
 Tải phiên bản mới nhất tại
-[GitHub Releases](https://github.com/lestmegogo/Screenpcmobile/releases/latest).
+https://github.com/okebaybii/Screenpcmobile/releases
 
 ### Bộ cài Windows
 
